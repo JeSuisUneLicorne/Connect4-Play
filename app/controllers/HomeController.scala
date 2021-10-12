@@ -3,6 +3,7 @@ package controllers
 import javax.inject._
 import play.api._
 import play.api.mvc._
+import de.htwg.se.connect_four.ConnectFour
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -10,6 +11,7 @@ import play.api.mvc._
  */
 @Singleton
 class HomeController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
+  val gamecontroller = ConnectFour.controller
 
   /**
    * Create an Action to render an HTML page.
@@ -20,5 +22,8 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
    */
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index())
+  }
+  def connectfour = Action {
+    Ok(gamecontroller.gridToString)
   }
 }

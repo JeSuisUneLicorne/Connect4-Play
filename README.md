@@ -1,17 +1,17 @@
 # Web-Apps-WS2021-Connect4
 
-This is the application Daniel and Julian are using for the lecture "Web Technologies" at HTWG Konstanz.
+### About
 
-## Setup
+Coursework for our Web Applications class of fall 2021.
+Made by [Daniel](github.com/danielozcpp) and [Julian](github.com/JeSuisUneLicorne).
 
-* Select Java 1.8 (Version 9) and SBT 1.4
+### Run
 
-## Running
+Type `sbt run` inside a terminal. (You may need to use Java 1.8 on version 9 and SBT 1.4)
+Type `http://localhost:9000` in your browser to see the results.
 
-* In IDEA Terminal type "sbt run". The first time will take some time.
 
-```
-sbt run
-```
-
-Use http://localhost:9000 to check the results.
+### Guidelines
+- http://www.plainenglish.co.uk/how-to-write-in-plain-english.html
+- https://docs.scala-lang.org/style/
+- https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53
