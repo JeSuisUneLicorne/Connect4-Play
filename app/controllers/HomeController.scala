@@ -1,29 +1,30 @@
 package controllers
 
+// Play imports
+import com.google.inject.Injector
 import javax.inject._
 import play.api._
 import play.api.mvc._
-import de.htwg.se.connect_four.ConnectFour
 
-/**
- * This controller creates an `Action` to handle HTTP requests to the
- * application's home page.
- */
+// SE project related imports
+import com.google.inject.Guice
+import de.htwg.se.connect_four._
+import de.htwg.se.connect_four.controller.controllerComponent.ControllerInterface
+
 @Singleton
 class HomeController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
-  val gamecontroller = ConnectFour.controller
+  val injector: Injector = Guice.createInjector(new ConnectFourModule)
+  val controller: ControllerInterface = injector.getInstance(classOf[ControllerInterface])
 
-  /**
-   * Create an Action to render an HTML page.
-   *
-   * The configuration in the `routes` file means that this method
-   * will be called when the application receives a `GET` request with
-   * a path of `/`.
-   */
-  def index() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.index())
+  def restartGame(): Action[AnyContent] = Action {
+    //Grid Small (6,7), Middle (10,11), Large (16,17) possible
+    controller.createEmptyGrid("Grid Small")
+    Ok(views.html.index(controller))
   }
-  def connectfour = Action {
-    Ok(gamecontroller.gridToString)
+
+  def dropDiscAt(columnIndex: Int): Action[AnyContent] = Action {
+    controller.setValueToBottom(columnIndex)
+    Ok(views.html.index(controller))
   }
+  
 }
