@@ -19,7 +19,7 @@ Type `http://localhost:9000` in your browser to see the results.
 
 ###
 
-Mentor Dan
-Disciple Julian
-
+Mentor: Dan  
+Disciple: Julian  
+  
 :D
