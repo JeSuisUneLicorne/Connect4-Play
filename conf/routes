@@ -4,8 +4,8 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index()
-GET     /connectfour                controllers.HomeController.connectfour()
+GET     /                           controllers.HomeController.restartGame()
+GET     /$columnIndex<[0-6]>        controllers.HomeController.dropDiscAt(columnIndex: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

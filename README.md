@@ -15,3 +15,11 @@ Type `http://localhost:9000` in your browser to see the results.
 - http://www.plainenglish.co.uk/how-to-write-in-plain-english.html
 - https://docs.scala-lang.org/style/
 - https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53
+
+
+###
+
+Mentor Dan
+Disciple Julian
+
+:D
