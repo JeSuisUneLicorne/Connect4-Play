@@ -8,7 +8,7 @@ scalaVersion := "2.12.7"
 
 lazy val branch = "master"
 
-lazy val game = RootProject(uri("git://github.com/danielozcpp/HTWG_SE_ConnectFour.git#%s".format(branch)))
+lazy val game = RootProject(uri("git://github.com/JeSuisUneLicorne/HTWG_SE_ConnectFour.git#%s".format(branch)))
 
 lazy val root = Project("Connect4", file("."))
   .enablePlugins(PlayScala)
