@@ -32,7 +32,7 @@ import de.htwg.se.connect_four.controller.controllerComponent.ControllerInterfac
 
 /**
  * Provides an adapted interface to the source dependency's controller interface.
- * This class should suffice for all the game board handling.
+ * This class should suffice class for accessing/updating the game board.
  */
 class GameControllerAdapter {
   private val injector: Injector = Guice.createInjector(new ConnectFourModule)
