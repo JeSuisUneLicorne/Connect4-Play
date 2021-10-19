@@ -31,7 +31,7 @@ import de.htwg.se.connect_four._
 import de.htwg.se.connect_four.controller.controllerComponent.ControllerInterface
 
 /**
- * Provides an adapted interface to the source dependencies controller interface.
+ * Provides an adapted interface to the source dependency's controller interface.
  * This class should suffice for all the game board handling.
  */
 class GameControllerAdapter {
