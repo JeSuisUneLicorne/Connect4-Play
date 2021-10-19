@@ -32,7 +32,23 @@ SOFTWARE.
   <h1><span style="color:red">CONNECT</span> <span style="color:#CCCC00">4</span></h1>
   <h2><span style="color:#CCCC00">THE GAME</span></h2>
   <br>
-  <pre>@controllerAdapter.boardToString</pre>
+
+  @*  TODO: display game board w/o using the controllerAdapter.boardToString method.
+      Consider using these methods instead:
+      - controllerAdapter.getDiscValueAt(rowIndex, columnIndex)
+      - controllerAdapter.isDiscSetAt(rowIndex, columnIndex)
+      - controllerAdapter.tellNumberOfBoardRows()
+      - controllerAdapter.tellNumberOfBoardColumns()
+      Tips: There are Unicode characters that can be used to represent a Connect 4 disc.
+      For reference: https://www.playframework.com/documentation/2.8.x/ScalaTemplates
+  *@
+  <pre>
+    @controllerAdapter.getDiscValueAt(0, 0)
+    @controllerAdapter.isDiscSetAt(0, 0)
+    @controllerAdapter.tellNumberOfBoardRows()
+    @controllerAdapter.tellNumberOfBoardColumns()
+  </pre>
+
   <br>
   <p>
     <span style="color:#CCCC00">TURN</span>
