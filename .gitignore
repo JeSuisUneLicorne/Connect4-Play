@@ -1,9 +1,8 @@
-# Intellij
-/.idea/
-
-/.g8
 logs
 target
+/.g8
+/.metals
+/.vscode
 /.bsp
 /.idea
 /.idea_modules
@@ -11,7 +10,3 @@ target
 /.project
 /.settings
 /RUNNING_PID
-/project
-
-*.class
-*.log
