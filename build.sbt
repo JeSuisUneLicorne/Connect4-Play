@@ -1,7 +1,7 @@
 // Set this project's metadata
 name := "connect4-play"
 version := "0.1"
-scalaVersion := "2.13.6"
+scalaVersion := "2.12.7"
 organization := "de.htwg.coursework"
 organizationName := "Konstanz University of Applied Sciences"
 homepage := Some(url("https://github.com/JeSuisUneLicorne/Web-Apps-WS2021-Connect4"))
@@ -13,7 +13,7 @@ licenses += "MIT" -> url("https://opensource.org/licenses/MIT")
 lazy val repoBranch: String = "master"
 lazy val repoUri = uri("git://github.com/JeSuisUneLicorne/HTWG_SE_ConnectFour.git#%s".format(repoBranch))
 lazy val sourceDependency: RootProject = RootProject(repoUri)
-sourceDependency.scalaVersion := 2.13.6
+
 lazy val projectId: String = "connect-4-play"
 lazy val project: Project = Project(projectId, file("."))
   .enablePlugins(PlayScala)
