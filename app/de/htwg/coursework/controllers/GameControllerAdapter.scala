@@ -64,4 +64,11 @@ class GameControllerAdapter {
 
   /** Checks whether the specified player is in turn or not. */
   def checkCurrentTurnOf(playerIndex: Int): Boolean = controller.getTurn(playerIndex)
+
+  /** Returns the number of rows of the game board. */
+  def tellNumberOfBoardRows(): Int = controller.grid.cells.row
+
+  /** Returns the number of columns of the game board. */
+  def tellNumberOfBoardColumns(): Int = controller.grid.cells.col
+
 }
