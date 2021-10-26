@@ -31,4 +31,4 @@ TODO: add a couple of screenshots
 - [Learn Git Branching](https://learngitbranching.js.org/)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/)
 - [The Modern JavaScript Tutorial](https://javascript.info/)
-- [Removing jQuery from GitHub.com frontend (jQuert is obsolete)](https://github.blog/2018-09-06-removing-jquery-from-github-frontend/)
+- [Removing jQuery from GitHub.com frontend (jQuery is obsolete)](https://github.blog/2018-09-06-removing-jquery-from-github-frontend/)
