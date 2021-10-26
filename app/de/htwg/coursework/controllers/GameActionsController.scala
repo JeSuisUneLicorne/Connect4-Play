@@ -20,7 +20,7 @@
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
-*/
+ */
 
 package de.htwg.coursework.controllers
 
@@ -30,8 +30,11 @@ import play.api._
 import play.api.mvc._
 
 @Singleton
-class GameActionsController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
-  private val gameControllerAdapter: GameControllerAdapter = new GameControllerAdapter
+class GameActionsController @Inject() (
+    val controllerComponents: ControllerComponents
+) extends BaseController {
+  private val gameControllerAdapter: GameControllerAdapter =
+    new GameControllerAdapter
 
   def restartGame(): Action[AnyContent] = Action {
     gameControllerAdapter.emptyBoard
