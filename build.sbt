@@ -9,6 +9,22 @@ startYear := Some(2021)
 description := "Coursework for our Web Applications class of fall 2021"
 licenses += "MIT" -> url("https://opensource.org/licenses/MIT")
 
+// Scalafmt
+val sclafmtOnCompile = true
+
+// Compiler options
+scalacOptions ++= Seq(
+  "-encoding", "UTF-8",
+  "-Xfatal-warnings",
+  "-deprecation",
+  "-language:implicitConversions",
+  "-language:higherKinds",
+  "-language:existentials",
+  "-language:postfixOps",
+  "-feature",
+  "-unchecked"
+)
+
 // Add the Connect 4 game written in Scala as a source dependency from GitHub
 lazy val repoBranch: String = "master"
 lazy val repoUri = uri("git://github.com/JeSuisUneLicorne/HTWG_SE_ConnectFour.git#%s".format(repoBranch))
