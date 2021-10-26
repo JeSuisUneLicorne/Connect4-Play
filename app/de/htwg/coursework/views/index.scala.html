@@ -28,56 +28,116 @@ SOFTWARE.
 
 @main("Connect 4 Play") {
 
-<center>
-  <h1><span style="color:red">CONNECT</span> <span style="color:#CCCC00">4</span></h1>
-  <h2><span style="color:#CCCC00">THE GAME</span></h2>
+<div style="text-align:center">
+  <!-- Title -->
+  <h1><span style="color:grey">CONNECT</span><span style="color:#7516E9"> 4</span></h1>
+  <h4><span style="color:grey">THE GAME</span></h4>
   <br>
-  <pre>@controllerAdapter.boardToString</pre>
+  <br>
+  <br>
+  <!-- Board -->
+  <table align="center">
+    <tr>
+      <th><span style="color:grey">0</span></th>
+      <th><span style="color:grey">1</span></th>
+      <th><span style="color:grey">2</span></th>
+      <th><span style="color:grey">3</span></th>
+      <th><span style="color:grey">4</span></th>
+      <th><span style="color:grey">5</span></th>
+      <th><span style="color:grey">6</span></th>
+    </tr>
+    @for(rowIndex <- 0 to controllerAdapter.tellNumberOfBoardRows() - 1) { <tr>
+      @for(columnIndex <- 0 to controllerAdapter.tellNumberOfBoardColumns() - 1) { <td width="20">
+        @if(controllerAdapter.isDiscSetAt(rowIndex, columnIndex)) {
+        @if(controllerAdapter.getDiscValueAt(rowIndex, columnIndex) == 1) {
+        &#128309
+        <!-- blue circle -->
+        } else {
+        &#128993
+        <!-- yellow circle -->
+        }
+        } else {
+        <span style="color:gray">_</span>
+        }
+        </td>
+        }
+        </tr>
+        }
+  </table>
   <br>
   <p>
-    <span style="color:#CCCC00">TURN</span>
+    <span style="color:gray">TURN</span>
   </p>
-  <span style="color:red">
+  <span style="color:#7516E9">
     <pre>PLAYER @controllerAdapter.tellCurrentTurn</pre>
   </span>
   <p>
-    <span style="color:#CCCC00">STATUS</span>
+    <span style="color:gray">STATUS</span>
   </p>
-  <span style="color:red">
+  <span style="color:#7516E9">
     <pre>@controllerAdapter.tellBoardStatus</pre>
   </span>
   <br>
   <br>
   <br>
   <br>
+  <!-- Guide-->
+  <div>
+    <details>
+      <summary><span style="color:gray"><b>GUIDE</b></span></summary>
+      <span style="color:gray">
+        <blockquote cite="https://en.wikipedia.org/wiki/Connect_Four">
+          <div style="display: inline-block; text-align: left;">
+            <h3>SYNOPSIS</h3>
+            <p>
+              Connect Four (also known as Four Up, Plot Four, Find Four, Captain's Mistress, Four in a Row, Drop Four,
+              and Gravitrips in the Soviet Union)
+              is a two-player connection board game, in which the players choose a color (usually yellow and red) and
+              then take turns dropping colored discs into a seven-column,
+              six-row vertically suspended grid. The pieces fall straight down, occupying the lowest available space
+              within the column.
+
+              The game was first sold under the Connect Four trademark[3] by Milton Bradley in February 1974.
+            </p>
+            <h3>OBJECTIVE</h3>
+            <p>
+              The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of
+              one's own discs. Connect Four is a solved game.
+              The first player can always win by playing the right moves.
+            </p>
+            <h3>RULES</h3>
+            <ul>
+              <li>First, decide who goes first and what color each player will have. </li>
+              <li>Players must alternate turns, and only one disc can be dropped in each turn. </li>
+              <li>On your turn, drop one of your colored discs from the top into any of the seven slots. </li>
+              <li>The game ends when there is a 4-in-a-row or a stalemate.</li>
+              <li>The starter of the previous game goes second on the next game.</li>
+            </ul>
+            <img src=@routes.Assets.versioned("images/wiki-gameplay.gif")>
+          </div>
+        </blockquote>
+      </span>
+    </details>
+  </div>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <span style="color:gray">
-    <h5>
-      <b>
-        CREDITS
-      </b>
-      <br>
-      <br>
-      ORIGINAL GAME
-      <br>
-      <br>
-      Jing Qian & Reif Dervišbegović
-      <br>
-      <br>
-      WEB VERSION
-      <br>
-      <br>
-      Daniel Özyurt & Julian Zimmermann
-      <br>
-      <br>
-    </h5>
-  </span>
-</center>
+  <!-- Credits -->
+  <div>
+    <details>
+      <summary><span style="color:gray"><b>CREDITS</b></span></summary>
+      <span style="color:gray">
+        <blockquote>
+          <div style="display: inline-block; text-align: left;">
+            <h4>ORIGINAL GAME</h4>
+            <h4>Jing Qian & Reif Dervišbegović<h4>
+                <br>
+                <h4>WEB VERSION</h4>
+                <h4>Daniel Özyurt & Julian Zimmermann<h4>
+          </div>
+        </blockquote>
+      </span>
+    </details>
+  </div>
+
+</div>
 }
