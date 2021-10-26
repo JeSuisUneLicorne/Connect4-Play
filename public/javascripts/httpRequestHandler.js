@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2021 Daniel Özyurt, Julian Zimmermann
+  Copyright (c) 2021 Daniel Özyurt
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,28 +22,18 @@
   SOFTWARE.
 */
 
-package de.htwg.coursework.controllers
+export { HttpRequestHandler };
 
-// Play imports
-import javax.inject._
-import play.api._
-import play.api.mvc._
+import * as loggerUtil from './messageLogger.js';
 
-@Singleton
-class GameActionsController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
-  private val gameControllerAdapter: GameControllerAdapter = new GameControllerAdapter
-
-  def restartGame(): Action[AnyContent] = Action {
-    gameControllerAdapter.emptyBoard
-    Ok(de.htwg.coursework.views.html.index(gameControllerAdapter))
+// TODO: implement remaining HTTP methods
+class HttpRequestHandler {
+  static async getJson(url) {
+    console.assert(typeof url === "string");
+    loggerUtil.printDebug('In method ' + this.getJson.name);
+    const init = {
+      method: 'GET'
+    };
+    return (await fetch(url, init)).json()
   }
-
-  def dropDiscAt(columnIndex: Int): Action[AnyContent] = Action {
-    gameControllerAdapter.dropDiscAt(columnIndex)
-    Ok(de.htwg.coursework.views.html.index(gameControllerAdapter))
-  }
-
-  def readJson(): Action[AnyContent] = Action {
-    Ok(de.htwg.coursework.views.html.index(gameControllerAdapter))
-  }
-}
+} // end of class HttpRequestHandler
