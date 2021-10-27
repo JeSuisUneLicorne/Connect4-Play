@@ -140,29 +140,39 @@ class MessageLogger {
     this.#messageLogs.push(messageLog);
   }
 
-  printAll() {
-    const printMeOrNot = function printMeOrNot2(logLevel, messageLog) {
-      console.assert(typeof logLevel === "number");
-      console.assert(messageLog instanceof MessageLog);
-      if ((logLevel >= LogLevels.DEBUG) && (messageLog instanceof DebugMessageLog)) {
-        messageLog.print(logLevel);
-      }
-      if ((logLevel >= LogLevels.INFO) && (messageLog instanceof InfoMessageLog)) {
-        messageLog.print(logLevel);
-      }
-      if ((logLevel >= LogLevels.WARNING) && (messageLog instanceof WarningMessageLog)) {
-        messageLog.print(logLevel);
-      }
-      if ((logLevel >= LogLevels.CRITICAL) && (messageLog instanceof CriticalMessageLog)) {
-        messageLog.print(logLevel);
-      }
-      if ((logLevel >= LogLevels.FATAL) && (messageLog instanceof FatalMessageLog)) {
-        messageLog.print(logLevel);
-      }
-    } // printMeOrNot
+  #printMeOrNot(logLevel, messageLog) {
+    console.assert(typeof logLevel === "number");
+    console.assert(messageLog instanceof MessageLog);
+    if ((logLevel >= LogLevels.DEBUG) && (messageLog instanceof DebugMessageLog)) {
+      messageLog.print(logLevel);
+    }
+    if ((logLevel >= LogLevels.INFO) && (messageLog instanceof InfoMessageLog)) {
+      messageLog.print(logLevel);
+    }
+    if ((logLevel >= LogLevels.WARNING) && (messageLog instanceof WarningMessageLog)) {
+      messageLog.print(logLevel);
+    }
+    if ((logLevel >= LogLevels.CRITICAL) && (messageLog instanceof CriticalMessageLog)) {
+      messageLog.print(logLevel);
+    }
+    if ((logLevel >= LogLevels.FATAL) && (messageLog instanceof FatalMessageLog)) {
+      messageLog.print(logLevel);
+    }
+  } // printMeOrNot
 
+  printTopOnce() {
+    const numberOfToBeProcessedMessageLogs = this.#messageLogs.length;
+    console.assert(numberOfToBeProcessedMessageLogs !== 0)
+    const topMessageLog = this.#messageLogs.pop(); // pop does not pop (it is perhaps like std::vector::top in C++)
+    this.#printMeOrNot(this.#logLevel, topMessageLog)
+    this.#messageLogs = this.#messageLogs.filter(messageLog => messageLog !== topMessageLog);
+    console.assert((numberOfToBeProcessedMessageLogs - 1) === this.#messageLogs.length);
+  } // printTopOnce
+
+  printAll() {
+    console.assert(this.#messageLogs.length !== 0)
     if (this.#messageLogs.length !== 0) {
-      this.#messageLogs.forEach(messageLog => printMeOrNot(this.#logLevel, messageLog));
+      this.#messageLogs.forEach(messageLog => this.#printMeOrNot(this.#logLevel, messageLog));
     }
   } // printAll
 } // end of class MessageLogger
