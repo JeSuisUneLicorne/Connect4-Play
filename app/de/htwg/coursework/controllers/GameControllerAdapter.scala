@@ -30,9 +30,20 @@ import com.google.inject.Guice
 import de.htwg.se.connect_four._
 import de.htwg.se.connect_four.controller.controllerComponent.ControllerInterface
 
+// Other imports
+import play.api.libs.json._
+
+/** Provides the encodings (semantics) of the game board.
+  */
+object GameBoardDiscCodes extends Enumeration {
+  type GameBoardDiscCodes = Value
+  val EMPTY = Value(0)
+  val PLAYER1 = Value(1)
+  val PLAYER2 = Value(2)
+}
+
 /** Provides an adapted interface to the source dependency's controller
-  * interface. This class should suffice class for accessing/updating the game
-  * board.
+  * interface. This class should suffice for accessing/updating the game board.
   */
 class GameControllerAdapter {
   private val injector: Injector = Guice.createInjector(new ConnectFourModule)
@@ -47,8 +58,43 @@ class GameControllerAdapter {
   /** Returns a string representation of the game board. */
   def boardToString(): String = controller.gridToString
 
-  /** TODO: Returns a JSON representation of the game board. */
-  def boardToJson() = ???
+  /** Returns a JSON representation of the game board. */
+  def boardToJson(): JsValue = {
+    val emptyRows: Vector[Vector[Int]] =
+      Vector.fill(tellNumberOfBoardRows(), tellNumberOfBoardColumns())(
+        GameBoardDiscCodes.EMPTY.id
+      );
+
+    def updateRowAt(
+        rowIndex: Int,
+        previousRows: Vector[Vector[Int]]
+    ): Vector[Vector[Int]] = {
+      val columnRange: Vector[Int] = Vector.range(0, tellNumberOfBoardColumns())
+      previousRows.updated(
+        rowIndex,
+        columnRange.map(col => getDiscValueAt(rowIndex, col))
+      )
+    }
+
+    lazy val updatedRows: Vector[Vector[Int]] = updateRowAt(
+      5,
+      updateRowAt(
+        4,
+        updateRowAt(
+          3,
+          updateRowAt(2, updateRowAt(1, updateRowAt(0, emptyRows)))
+        )
+      )
+    )
+
+    val result
+        : scala.collection.immutable.HashMap[String, Vector[Vector[Int]]] =
+      scala.collection.immutable.HashMap[String, Vector[Vector[Int]]](
+        "row" -> updatedRows
+      )
+
+    Json.toJson(result)
+  }
 
   /** Drops a disc in the specified column. */
   def dropDiscAt(columnIndex: Int): Unit =
@@ -67,10 +113,10 @@ class GameControllerAdapter {
     controller.grid.cells.rows(rowIndex)(columnIndex).isSet
 
   /** Checks whether or not a win case is present. */
-  def tellBoardStatus(): Enumeration#Value = controller.getGameStatus
+  def tellBoardStatus(): Enumeration#Value = controller.getGameStatus()
 
   /** Returns the player who is currently in turn. */
-  def tellCurrentTurn(): Int = controller.currentPlayer
+  def tellCurrentTurn(): Int = controller.currentPlayer()
 
   /** Checks whether the specified player is in turn or not. */
   def checkCurrentTurnOf(playerIndex: Int): Boolean =
