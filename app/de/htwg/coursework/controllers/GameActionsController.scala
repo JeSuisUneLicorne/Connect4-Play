@@ -37,7 +37,7 @@ class GameActionsController @Inject() (
     new GameControllerAdapter
 
   def restartGame(): Action[AnyContent] = Action {
-    gameControllerAdapter.emptyBoard
+    gameControllerAdapter.emptyBoard()
     Ok(de.htwg.coursework.views.html.index(gameControllerAdapter))
   }
 
@@ -47,6 +47,6 @@ class GameActionsController @Inject() (
   }
 
   def boardToJson(): Action[AnyContent] = Action {
-    Ok(gameControllerAdapter.boardToJson)
+    Ok(gameControllerAdapter.boardToJson())
   }
 }
