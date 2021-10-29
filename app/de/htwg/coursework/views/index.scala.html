@@ -69,7 +69,8 @@ SOFTWARE.
     <span style="color:gray">TURN</span>
   </p>
   <span style="color:#7516E9">
-    <pre>PLAYER @controllerAdapter.tellCurrentTurn()</pre>
+    <!-- shows current player and his color-->
+    <pre>PLAYER @controllerAdapter.tellCurrentTurn() @if(controllerAdapter.tellCurrentTurn() == 1){ &#128309 } else if(controllerAdapter.tellCurrentTurn() == 2) { &#128993 } </pre>
   </span>
   <p>
     <span style="color:gray">STATUS</span>
@@ -128,11 +129,18 @@ SOFTWARE.
       <span style="color:gray">
         <blockquote>
           <div style="display: inline-block; text-align: left;">
-            <h4>ORIGINAL GAME</h4>
-            <h4>Jing Qian & Reif Dervišbegović<h4>
-                <br>
-                <h4>WEB VERSION</h4>
-                <h4>Daniel Özyurt & Julian Zimmermann<h4>
+            <h4><a href="https://github.com/herrqian/HTWG_SE_ConnectFour" target="_blank">ORIGINAL GAME</a>
+              <br>
+              <br>
+              <a href="https://github.com/herrqian/" target="_blank">Jing Qian</a> &   <a href="https://github.com/Vidatschi" target="_blank">Reif Dervišbegović</a>
+              <br>
+              <br>
+              <br>
+              <a href="https://github.com/JeSuisUneLicorne/Connect4-Play" target="_blank">WEB VERSION</a>
+              <br>
+              <br>
+              <a href="https://github.com/danielozcpp" target="_blank">Daniel Özyurt</a> & <a href="https://github.com/JeSuisUneLicorne/" target="_blank">Julian Zimmermann</a>
+            </h4>
           </div>
         </blockquote>
       </span>
