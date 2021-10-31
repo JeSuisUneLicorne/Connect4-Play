@@ -8,11 +8,8 @@ Coursework for our Web Applications class of fall 2021.
 
 **Screenshots**
 
----
 
-TODO: add a couple of screenshots
-
-
+<!--TODO: add a couple of screenshots-->
 
 ---
 
