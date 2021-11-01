@@ -28,23 +28,23 @@ SOFTWARE.
 
 @main("Connect 4 Play") {
 
-<div style="text-align:center">
+<div class="gameContainer" >
   <!-- Title -->
-  <h1><span style="color:grey">CONNECT</span><span style="color:#7516e9"> 4</span></h1>
-  <h4><span style="color:grey">THE GAME</span></h4>
+  <h1>CONNECT<span style="color:#7516e9"> 4</span></h1>
+  <h4>THE GAME</h4>
   <br>
   <br>
   <br>
   <!-- Board -->
-  <table align="center">
+  <table>
     <tr>
-      <th><span style="color:grey">0</span></th>
-      <th><span style="color:grey">1</span></th>
-      <th><span style="color:grey">2</span></th>
-      <th><span style="color:grey">3</span></th>
-      <th><span style="color:grey">4</span></th>
-      <th><span style="color:grey">5</span></th>
-      <th><span style="color:grey">6</span></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
     </tr>
     @for(rowIndex <- 0 to controllerAdapter.tellNumberOfBoardRows() - 1) { <tr>
       @for(columnIndex <- 0 to controllerAdapter.tellNumberOfBoardColumns() - 1) { <td width="20">
@@ -65,15 +65,15 @@ SOFTWARE.
         }
   </table>
   <br>
-  <p>
-    <span style="color:gray">TURN</span>
+  <p class="info">
+    TURN
   </p>
   <span style="color:#7516e9">
     <!-- shows current player and his color-->
     <pre>PLAYER @controllerAdapter.tellCurrentTurn() @if(controllerAdapter.tellCurrentTurn() == 1){ &#128309 } else if(controllerAdapter.tellCurrentTurn() == 2) { &#128993 } </pre>
   </span>
-  <p>
-    <span style="color:gray">STATUS</span>
+  <p class="info">
+    STATUS
   </p>
   <span style="color:#7516e9">
     <pre>@controllerAdapter.tellBoardStatus()</pre>
@@ -85,10 +85,9 @@ SOFTWARE.
   <!-- Guide-->
   <div>
     <details>
-      <summary><span style="color:gray"><b>GUIDE</b></span></summary>
-      <span style="color:gray">
+      <summary class="info">GUIDE</summary>
+      <span class="guide">
         <blockquote cite="https://en.wikipedia.org/wiki/Connect_Four">
-          <div style="display: inline-block; text-align: left;">
             <h3>SYNOPSIS</h3>
             <p>
               Connect Four (also known as Four Up, Plot Four, Find Four, Captain's Mistress, Four in a Row, Drop Four,
@@ -115,7 +114,6 @@ SOFTWARE.
               <li>The starter of the previous game goes second on the next game.</li>
             </ul>
             <img src=@routes.Assets.versioned("images/wiki-gameplay.gif")>
-          </div>
         </blockquote>
       </span>
     </details>
@@ -125,10 +123,9 @@ SOFTWARE.
   <!-- Credits -->
   <div>
     <details>
-      <summary><span style="color:gray"><b>CREDITS</b></span></summary>
-      <span style="color:gray">
+      <summary class="info">CREDITS</summary>
+      <span class="guide">
         <blockquote>
-          <div style="display: inline-block; text-align: left;">
             <h4><a href="https://github.com/herrqian/HTWG_SE_ConnectFour" target="_blank">ORIGINAL GAME</a>
               <br>
               <br>
@@ -141,11 +138,9 @@ SOFTWARE.
               <br>
               <a href="https://github.com/danielozcpp" target="_blank">Daniel Özyurt</a> & <a href="https://github.com/JeSuisUneLicorne/" target="_blank">Julian Zimmermann</a>
             </h4>
-          </div>
         </blockquote>
       </span>
     </details>
   </div>
-
 </div>
 }
