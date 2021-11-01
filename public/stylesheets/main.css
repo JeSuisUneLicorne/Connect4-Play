@@ -1,3 +1,35 @@
+.gameContainer {
+    text-align: center;
+
+}
+
+.info {
+    color: grey;
+    font-weight: bold;
+}
+
+.guide {
+    color: grey;
+    display: inline-block;
+    text-align: left;
+}
+
+table, th, td {
+    border: 0px; <!--1px solid black for broders -->
+    border-collapse: collapse;
+    color: grey;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: grey;
+}
+
+h4 {
+    color: grey;
+}
+
 a:link {
     color: gray;
     background-color: transparent;
