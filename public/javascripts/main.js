@@ -25,6 +25,16 @@
 import * as loggerUtil from './messageLogger.js';
 import * as httpUtil from './httpRequestHandler.js';
 
+const TestVueApp = {
+  data() {
+    return {
+      message: "Vue just works!"
+    }
+  }
+};
+
+Vue.createApp(TestVueApp).mount('#test-vue-app');
+
 function main() {
   loggerUtil.messageLogger.setLogLevel(5);
   loggerUtil.printDebug(`In function ${main.name}`);
