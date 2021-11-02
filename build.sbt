@@ -21,7 +21,7 @@ libraryDependencies ++=Seq(
 )
 
 // TODO: Update link
-lazy val sourceDependency: RootProject = RootProject(uri("https://github.com/dan-htwg/Connect4.git#customized"))
+lazy val sourceDependency: RootProject = RootProject(uri("https://github.com/dankoncs/Connect4.git#customized"))
 
 lazy val project: Project = Project("connect4-play", file(".")).enablePlugins(PlayScala).aggregate(sourceDependency).dependsOn(sourceDependency)
 
