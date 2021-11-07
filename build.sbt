@@ -20,7 +20,7 @@ libraryDependencies ++=Seq(
   "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
 )
 
-lazy val sourceDependency: RootProject = RootProject(uri("https://github.com/JeSuisUneLicorne/HTWG_SE_ConnectFour#master"))
+lazy val sourceDependency: RootProject = RootProject(uri("https://github.com/JeSuisUneLicorne/HTWG_SE_ConnectFour.git"))
 
 lazy val project: Project = Project("connect4-play", file(".")).enablePlugins(PlayScala).aggregate(sourceDependency).dependsOn(sourceDependency)
 
