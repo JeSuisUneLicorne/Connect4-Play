@@ -28,31 +28,42 @@ SOFTWARE.
 
 @main("Connect 4 Play") {
 
+  <nav class="navbar fixed-top navbar-expand-md navbar-custom">
+    <ul class="ulbar">
+      <!-- <li><a href="/" class="navbar-brand navbar-text"><img src="/assets/images/Connect4Logo.png" id="navbar-logo" width="100" alt="Logo"/></a></li> -->
+      <li><a href="/">Home</a></li>
+      <li><a href="">Guide</a></li> <!--TODO: open guide -->
+      <!--TODO: more buttons: credits on the right side -->
+    </ul>
+  </nav>
   <!-- Test Vue -->
-  <div id="test-vue-app">
+ <!-- <div id="test-vue-app">
     {{ message }}
-  </div>
+  </div> -->
 
 <div class="gameContainer" >
   <!-- Title -->
-  <h1>CONNECT<span style="color:#7516e9"> 4</span></h1>
-  <h4>THE GAME</h4>
+  <br>
+  <br>
+  <br>
+  <h1 class="text-center">CONNECT<span style="color:#7516e9"> 4</span></h1>
+  <h4 class="text-center">THE GAME</h4>
   <br>
   <br>
   <br>
   <!-- Board -->
   <table>
     <tr>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
+      <th><a href="/0">0</a></th>
+      <th><a href="/1">1</a></th>
+      <th><a href="/2">2</a></th>
+      <th><a href="/3">3</a></th>
+      <th><a href="/4">4</a></th>
+      <th><a href="/5">5</a></th>
+      <th><a href="/6">6</a></th>
     </tr>
     @for(rowIndex <- 0 to controllerAdapter.tellNumberOfBoardRows() - 1) { <tr>
-      @for(columnIndex <- 0 to controllerAdapter.tellNumberOfBoardColumns() - 1) { <td width="20">
+      @for(columnIndex <- 0 to controllerAdapter.tellNumberOfBoardColumns() - 1) { <td width="22">
         @if(controllerAdapter.isDiscSetAt(rowIndex, columnIndex)) {
         @if(controllerAdapter.getDiscValueAt(rowIndex, columnIndex) == 1) {
         &#128309
@@ -84,16 +95,15 @@ SOFTWARE.
     <pre>@controllerAdapter.tellBoardStatus()</pre>
   </span>
   <br>
-  <br>
-  <br>
-  <br>
   <!-- Guide-->
+  <hr/>
   <div>
-    <details>
+    <details class="summary">
       <summary class="info">GUIDE</summary>
       <span class="guide">
         <blockquote cite="https://en.wikipedia.org/wiki/Connect_Four">
-            <h3>SYNOPSIS</h3>
+          <h3 class="text-center">SYNOPSIS</h3>
+          <br>
             <p>
               Connect Four (also known as Four Up, Plot Four, Find Four, Captain's Mistress, Four in a Row, Drop Four,
               and Gravitrips in the Soviet Union)
@@ -102,15 +112,17 @@ SOFTWARE.
               six-row vertically suspended grid. The pieces fall straight down, occupying the lowest available space
               within the column.
 
-              The game was first sold under the Connect Four trademark[3] by Milton Bradley in February 1974.
+              The game was first sold under the Connect Four trademark by Milton Bradley in February 1974.
             </p>
-            <h3>OBJECTIVE</h3>
+          <h3 class="text-center">OBJECTIVE</h3>
+          <br>
             <p>
               The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of
               one's own discs. Connect Four is a solved game.
               The first player can always win by playing the right moves.
             </p>
-            <h3>RULES</h3>
+          <h3 class="text-center">RULES</h3>
+          <br>
             <ul>
               <li>First, decide who goes first and what color each player will have. </li>
               <li>Players must alternate turns, and only one disc can be dropped in each turn. </li>
@@ -129,20 +141,15 @@ SOFTWARE.
   <div>
     <details>
       <summary class="info">CREDITS</summary>
+      <br>
       <span class="guide">
         <blockquote>
-            <h4><a href="https://github.com/herrqian/HTWG_SE_ConnectFour" target="_blank">ORIGINAL GAME</a>
-              <br>
-              <br>
+              <h5><a href="https://github.com/herrqian/HTWG_SE_ConnectFour" target="_blank">ORIGINAL GAME</a></h5>
               <a href="https://github.com/herrqian/" target="_blank">Jing Qian</a> &   <a href="https://github.com/Vidatschi" target="_blank">Reif Dervišbegović</a>
               <br>
               <br>
-              <br>
-              <a href="https://github.com/JeSuisUneLicorne/Connect4-Play" target="_blank">WEB VERSION</a>
-              <br>
-              <br>
-              <a href="https://github.com/danielozcpp" target="_blank">Daniel Özyurt</a> & <a href="https://github.com/JeSuisUneLicorne/" target="_blank">Julian Zimmermann</a>
-            </h4>
+              <h5><a href="https://github.com/JeSuisUneLicorne/Connect4-Play" target="_blank">WEB VERSION</a></h5>
+              <a href="https://github.com/dankoncs" target="_blank">Daniel Özyurt</a> & <a href="https://github.com/JeSuisUneLicorne/" target="_blank">Julian Zimmermann</a>
         </blockquote>
       </span>
     </details>
