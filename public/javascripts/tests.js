@@ -23,32 +23,43 @@
 */
 
 import * as loggerUtil from './messageLogger.js';
-import * as httpUtil from './httpRequestHandler.js';
-import * as tests from './tests.js'
 
-const TestVueApp = {
-  data() {
-    return {
-      message: ''
-    }
-  }
-};
+let testCount = 0;
+let failCount = 0;
 
-Vue.createApp(TestVueApp).mount('#test-vue-app');
-
-function main() {
-  loggerUtil.messageLogger.setLogLevel(5);
-  loggerUtil.printDebug(`In function ${main.name}`);
-
-  loggerUtil.printInfo('Fetch JSON file from server');
-  httpUtil.HttpRequestHandler.getJson('/json')
-    .then((data) => console.log(data));
-
-  loggerUtil.printFatal('test');
-  loggerUtil.printWarning('test');
-
-  tests.runTests(true);
-  loggerUtil.messageLogger.printAll();
+function testAssert(msg, test) {
+  if (test === false) {
+    loggerUtil.printCritical(msg)
+    ++failCount;
+  };
 }
 
-main();
+function runTest(testCase) {
+  testCase();
+  ++testCount;
+}
+
+function sampleTestCase() {
+  testAssert(`wrong result in ${sampleTestCase.name}`, 1 + 1 === 2);
+  testAssert(`wrong result in ${sampleTestCase.name}`, 1 + 2 === 2);
+}
+
+function testAll() {
+  runTest(sampleTestCase);
+}
+
+function runTests(flag = false) {
+  if (flag === true) {
+    testAll();
+    if (failCount > 0) {
+      loggerUtil.printCritical(`${failCount} TEST(S) FAILED\n`);
+    } else {
+      loggerUtil.printInfo('ALL TESTS PASSED\n');
+    }
+    loggerUtil.printInfo(`Tests run: ${testCount}\n`);
+  }
+}
+
+export {
+  runTests
+}

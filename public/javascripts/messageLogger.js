@@ -83,7 +83,7 @@ class FatalMessageLog extends MessageLog {
 
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
-    console.log(`FATAL @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cFATAL @ LEVEL ${currentLogLevel}: ${this._message}`, 'color: darkred; font-size: 14px; padding: 5%;');
   }
 }
 
@@ -95,7 +95,7 @@ class CriticalMessageLog extends MessageLog {
 
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
-    console.log(`CRITICAL @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cCRITICAL @ LEVEL ${currentLogLevel}: ${this._message}`, 'color: darkred; font-size: 14px; padding: 5%;');
   }
 }
 
@@ -108,7 +108,7 @@ class WarningMessageLog extends MessageLog {
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
 
-    console.log(`WARNING @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cWARNING @ LEVEL ${currentLogLevel}: ${this._message}`, 'color: orange; font-size: 14px; padding: 5%;');
   }
 }
 
@@ -120,7 +120,7 @@ class InfoMessageLog extends MessageLog {
 
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
-    console.log(`INFO @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cINFO @ LEVEL ${currentLogLevel}: ${this._message}`, 'color: green; font-size: 14px; padding: 5%;');
   }
 }
 
@@ -132,7 +132,7 @@ class DebugMessageLog extends MessageLog {
 
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
-    console.log(`DEBUG @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cDEBUG @ LEVEL ${currentLogLevel}: ${this._message}`, 'color: gray; font-size: 14px; padding: 5%;');
   }
 }
 
