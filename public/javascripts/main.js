@@ -50,4 +50,8 @@ function main() {
   loggerUtil.messageLogger.printAll();
 }
 
+function dropDisk(row) {
+  window.location.href='/'+row
+}
+
 main();

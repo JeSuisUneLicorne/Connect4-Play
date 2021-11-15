@@ -53,6 +53,7 @@ SOFTWARE.
   <br>
   <!-- Board -->
   <table id="buttonTable">
+    <!-- TODO: change onclick="..." with main.js method dropDisk(row) -->
     <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/0'">0</button></th>
     <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/1'">1</button></th>
     <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/2'">2</button></th>
@@ -129,7 +130,7 @@ SOFTWARE.
               <li>The game ends when there is a 4-in-a-row or a stalemate.</li>
               <li>The starter of the previous game goes second on the next game.</li>
             </ul>
-            <img src=@routes.Assets.versioned("images/wiki-gameplay.gif")>
+            <img src=@routes.Assets.versioned("images/wiki-gameplay.gif") class="center">
         </blockquote>
       </span>
     </details>
