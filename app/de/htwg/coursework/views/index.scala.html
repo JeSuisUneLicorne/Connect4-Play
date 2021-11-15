@@ -52,16 +52,15 @@ SOFTWARE.
   <br>
   <br>
   <!-- Board -->
-  <table>
-    <tr>
-      <th><a href="/0">0</a></th>
-      <th><a href="/1">1</a></th>
-      <th><a href="/2">2</a></th>
-      <th><a href="/3">3</a></th>
-      <th><a href="/4">4</a></th>
-      <th><a href="/5">5</a></th>
-      <th><a href="/6">6</a></th>
-    </tr>
+  <table id="buttonTable">
+    <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/0'">0</button></th>
+    <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/1'">1</button></th>
+    <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/2'">2</button></th>
+    <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/3'">3</button></th>
+    <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/4'">4</button></th>
+    <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/5'">5</button></th>
+    <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/6'">6</button></th>
+
     @for(rowIndex <- 0 to controllerAdapter.tellNumberOfBoardRows() - 1) { <tr>
       @for(columnIndex <- 0 to controllerAdapter.tellNumberOfBoardColumns() - 1) { <td width="22">
         @if(controllerAdapter.isDiscSetAt(rowIndex, columnIndex)) {
