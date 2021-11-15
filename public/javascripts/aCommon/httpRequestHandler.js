@@ -22,33 +22,29 @@
   SOFTWARE.
 */
 
-import * as loggerUtil from './aCommon/messageLogger.js';
-import * as httpUtil from './aCommon/httpRequestHandler.js';
-import * as testUtil from './tests.js'
+import * as loggerUtil from './messageLogger.js';
 
-const TestVueApp = {
-  data() {
-    return {
-      message: ""
-    }
+// TODO: implement remaining HTTP methods
+class HttpRequestHandler {
+  static async getJson(url) {
+    console.assert(typeof url === 'string');
+    loggerUtil.printDebug(`In method ${this.getJson.name}`);
+    loggerUtil.messageLogger.printTopOnce();
+    const init = {
+      method: 'GET',
+    };
+    return (await fetch(url, init)).json();
   }
-};
 
-Vue.createApp(TestVueApp).mount('#test-vue-app');
+  static async getText(url) {
+    console.assert(typeof url === 'string');
+    loggerUtil.printDebug(`In method ${this.getText.name}`);
+    loggerUtil.messageLogger.printTopOnce();
+    const init = {
+      method: 'GET',
+    };
+    return (await fetch(url, init)).text()
+  }
+} // end of class HttpRequestHandler
 
-async function main() {
-  loggerUtil.messageLogger.setLogLevel(5);
-  loggerUtil.printDebug(`In function ${main.name}`);
-
-  loggerUtil.printInfo('Fetch JSON file from server');
-  const boardJsonAsStr = JSON.stringify((await httpUtil.HttpRequestHandler.getJson('/json')));
-  loggerUtil.printDebug(`Current game board: ${boardJsonAsStr}`)
-
-  loggerUtil.printFatal('Bruh, no way!?');
-  loggerUtil.printWarning('Watch out!');
-
-  testUtil.runTests(true);
-  loggerUtil.messageLogger.printAll();
-}
-
-main();
+export { HttpRequestHandler };

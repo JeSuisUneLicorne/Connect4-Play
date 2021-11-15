@@ -22,19 +22,10 @@
   SOFTWARE.
 */
 
-import * as loggerUtil from './messageLogger.js';
+function isFunction(x) {
+  return Object.prototype.toString.call(x) == '[object Function]';
+}
 
-// TODO: implement remaining HTTP methods
-class HttpRequestHandler {
-  static async getJson(url) {
-    console.assert(typeof url === 'string');
-    loggerUtil.printDebug(`In method ${this.getJson.name}`);
-    loggerUtil.messageLogger.printTopOnce();
-    const init = {
-      method: 'GET',
-    };
-    return (await fetch(url, init)).json();
-  }
-} // end of class HttpRequestHandler
-
-export { HttpRequestHandler };
+export {
+  isFunction,
+}

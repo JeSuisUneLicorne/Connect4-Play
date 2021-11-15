@@ -22,33 +22,23 @@
   SOFTWARE.
 */
 
-import * as loggerUtil from './aCommon/messageLogger.js';
-import * as httpUtil from './aCommon/httpRequestHandler.js';
-import * as testUtil from './tests.js'
+import * as testUtil from './aCommon/simpleTests.js';
 
-const TestVueApp = {
-  data() {
-    return {
-      message: ""
-    }
-  }
-};
-
-Vue.createApp(TestVueApp).mount('#test-vue-app');
-
-async function main() {
-  loggerUtil.messageLogger.setLogLevel(5);
-  loggerUtil.printDebug(`In function ${main.name}`);
-
-  loggerUtil.printInfo('Fetch JSON file from server');
-  const boardJsonAsStr = JSON.stringify((await httpUtil.HttpRequestHandler.getJson('/json')));
-  loggerUtil.printDebug(`Current game board: ${boardJsonAsStr}`)
-
-  loggerUtil.printFatal('Bruh, no way!?');
-  loggerUtil.printWarning('Watch out!');
-
-  testUtil.runTests(true);
-  loggerUtil.messageLogger.printAll();
+function testYoMama() {
+  const aYoMamaJoke = `Yo mama's so fat, when she skips a meal, the stock market drops.`;
+  testUtil.testThat(aYoMamaJoke.includes('Yo mama') && aYoMamaJoke.includes('stock market will get back to normal.'),
+                    `\'${aYoMamaJoke}\' in ${testYoMama.name} ain\'t true. The stock market will continue to exist even without yo mama.`);
 }
 
-main();
+function runTests(testMeMmkay = false) {
+  console.assert(typeof (testMeMmkay) === 'boolean');
+  if (testMeMmkay === false) return;
+
+  const myTestsBruh = [testYoMama]
+
+  testUtil.runMyTests(myTestsBruh, testMeMmkay);
+}
+
+export {
+  runTests
+}

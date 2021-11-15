@@ -9,4 +9,5 @@ target
 /.classpath
 /.project
 /.settings
+*.sh
 /RUNNING_PID

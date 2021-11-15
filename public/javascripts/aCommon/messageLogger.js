@@ -22,6 +22,15 @@
   SOFTWARE.
 */
 
+const MessageDisplayOptions = {
+  common: 'font-size: 16px;',
+  colorFatal: 'color: #cc3300;',
+  colorCritical: 'color: #cc3300;',
+  colorWarning: 'color: #ffcc00;',
+  colorInfo: 'color: #339900;',
+  colorDebug: 'color: #99cc33;',
+};
+
 class LogLevels {
   static #_NODEBUG = 0;
 
@@ -83,7 +92,7 @@ class FatalMessageLog extends MessageLog {
 
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
-    console.log(`FATAL @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cFATAL @ LEVEL ${currentLogLevel}: ${this._message}`, `${MessageDisplayOptions.colorFatal} ${MessageDisplayOptions.common}`);
   }
 }
 
@@ -95,7 +104,7 @@ class CriticalMessageLog extends MessageLog {
 
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
-    console.log(`CRITICAL @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cCRITICAL @ LEVEL ${currentLogLevel}: ${this._message}`, `${MessageDisplayOptions.colorCritical} ${MessageDisplayOptions.common}`);
   }
 }
 
@@ -108,7 +117,7 @@ class WarningMessageLog extends MessageLog {
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
 
-    console.log(`WARNING @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cWARNING @ LEVEL ${currentLogLevel}: ${this._message}`, `${MessageDisplayOptions.colorWarning} ${MessageDisplayOptions.common}`);
   }
 }
 
@@ -120,7 +129,7 @@ class InfoMessageLog extends MessageLog {
 
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
-    console.log(`INFO @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cINFO @ LEVEL ${currentLogLevel}: ${this._message}`, `${MessageDisplayOptions.colorInfo} ${MessageDisplayOptions.common}`);
   }
 }
 
@@ -132,7 +141,7 @@ class DebugMessageLog extends MessageLog {
 
   print(currentLogLevel) {
     console.assert(typeof currentLogLevel === 'number');
-    console.log(`DEBUG @ LEVEL ${currentLogLevel}: ${this._message}`);
+    console.log(`%cDEBUG @ LEVEL ${currentLogLevel}: ${this._message}`, `${MessageDisplayOptions.colorDebug} ${MessageDisplayOptions.common}`);
   }
 }
 
