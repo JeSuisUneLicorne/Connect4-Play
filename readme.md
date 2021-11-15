@@ -2,9 +2,10 @@
 
 **About**
 
----
+This project is the coursework for the Web Applications class in Constance at the HTWG.
+It is developed by (Daniel Özyurt)[https://github.com/dan8510] and (Julian Zimmermann)[https://github.com/JeSuisUneLicorne] in fall 2021.
 
-Coursework for our Web Applications class of fall 2021.
+---
 
 **Screenshots**
 
