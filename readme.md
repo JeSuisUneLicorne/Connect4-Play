@@ -32,6 +32,6 @@ Coursework for our Web Applications class of fall 2021.
         <li> <a href="https://learngitbranching.js.org/" target="_blank">Learn Git Branching</a>  
         <li> <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a>  
         <li> <a href="https://javascript.info/" target="_blank">The Modern JavaScript Tutorial</a>  
-        <li> <a href="https://github.blog/2018-09-06-removing-jquery-from-github-frontend/" target="_blank">Removing jQuery from GitHub.com frontend (jQuery is obsolete)</a>]  
+        <li> <a href="https://github.blog/2018-09-06-removing-jquery-from-github-frontend/" target="_blank">Removing jQuery from GitHub.com frontend (jQuery is obsolete)</a>  
     </ul>
 </details>

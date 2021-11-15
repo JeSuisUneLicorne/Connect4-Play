@@ -18,6 +18,11 @@
   ],
   "rules": {
     "no-console": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "max-classes-per-file": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-vars": "off",
+    "no-shadow": "off",
+    "import/prefer-default-export": "off"
   }
 }

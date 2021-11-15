@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2021 Daniel Özyurt
+  Copyright (c) 2021 Daniel Özyurt, Julian Zimmermann
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,18 +22,19 @@
   SOFTWARE.
 */
 
-export { HttpRequestHandler };
-
 import * as loggerUtil from './messageLogger.js';
 
 // TODO: implement remaining HTTP methods
 class HttpRequestHandler {
   static async getJson(url) {
-    console.assert(typeof url === "string");
-    loggerUtil.printDebug('In method ' + this.getJson.name);
+    console.assert(typeof url === 'string');
+    loggerUtil.printDebug(`In method ${this.getJson.name}`);
+    loggerUtil.messageLogger.printTopOnce();
     const init = {
-      method: 'GET'
+      method: 'GET',
     };
-    return (await fetch(url, init)).json()
+    return (await fetch(url, init)).json();
   }
 } // end of class HttpRequestHandler
+
+export { HttpRequestHandler };
