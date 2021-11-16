@@ -25,6 +25,7 @@
 import * as loggerUtil from './aCommon/messageLogger.js';
 import * as httpUtil from './aCommon/httpRequestHandler.js';
 import * as testUtil from './tests.js'
+import * as game from './game.js'
 
 const TestVueApp = {
   data() {
@@ -44,15 +45,10 @@ async function main() {
   const boardJsonAsStr = JSON.stringify((await httpUtil.HttpRequestHandler.getJson('/json')));
   loggerUtil.printDebug(`Current game board: ${boardJsonAsStr}`)
 
-  loggerUtil.printFatal('Bruh, no way!?');
-  loggerUtil.printWarning('Watch out!');
+  game.initEventHandlers();
 
-  testUtil.runTests(true);
+  testUtil.runTests(false);
   loggerUtil.messageLogger.printAll();
-}
-
-function dropDisk(row) {
-  window.location.href='/'+row
 }
 
 main();

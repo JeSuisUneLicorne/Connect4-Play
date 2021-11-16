@@ -23,9 +23,20 @@
 */
 
 function isFunction(x) {
-  return Object.prototype.toString.call(x) == '[object Function]';
+  return Object.prototype.toString.call(x) === '[object Function]';
+}
+
+function isNumber(x) {
+  return Object.prototype.toString.call(x) === '[object Number]';
+}
+
+
+function isString(x) {
+  return Object.prototype.toString.call(x) === '[object String]';
 }
 
 export {
   isFunction,
+  isNumber,
+  isString,
 }

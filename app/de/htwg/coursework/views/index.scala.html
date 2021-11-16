@@ -54,15 +54,13 @@ SOFTWARE.
   <!-- Board -->
   <table>
     <table id="buttonTable">
-      <!-- TODO: change onclick="..." with main.js method dropDisk(row) -> not visible -->
-      <!-- <th><button type="button" class="btn btn-secondary btn-sm" onclick="dropDisk(0)">0</button></th> -->
-      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/0'">0</button></th>
-      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/1'">1</button></th>
-      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/2'">2</button></th>
-      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/3'">3</button></th>
-      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/4'">4</button></th>
-      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/5'">5</button></th>
-      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/6'">6</button></th>
+      <th><button id="dropAt0Btn" type="button" class="btn btn-secondary btn-sm">0</button></th>
+      <th><button id="dropAt1Btn" type="button" class="btn btn-secondary btn-sm">1</button></th>
+      <th><button id="dropAt2Btn" type="button" class="btn btn-secondary btn-sm">2</button></th>
+      <th><button id="dropAt3Btn" type="button" class="btn btn-secondary btn-sm">3</button></th>
+      <th><button id="dropAt4Btn" type="button" class="btn btn-secondary btn-sm">4</button></th>
+      <th><button id="dropAt5Btn" type="button" class="btn btn-secondary btn-sm">5</button></th>
+      <th><button id="dropAt6Btn" type="button" class="btn btn-secondary btn-sm">6</button></th>
 
     @for(rowIndex <- 0 to controllerAdapter.tellNumberOfBoardRows() - 1) { <tr>
       @for(columnIndex <- 0 to controllerAdapter.tellNumberOfBoardColumns() - 1) { <td width="22">

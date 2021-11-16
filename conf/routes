@@ -8,6 +8,7 @@ GET     /                           de.htwg.coursework.controllers.GameActionsCo
 GET     /$columnIndex<[0-6]>        de.htwg.coursework.controllers.GameActionsController.dropDiscAt(columnIndex: Int)
 GET     /json                       de.htwg.coursework.controllers.GameActionsController.boardToJson()
 GET     /html/:filename             controllers.Assets.at(path = "/public/html", filename)
+GET     /data/:filename             controllers.Assets.at(path = "/public/data", filename)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
