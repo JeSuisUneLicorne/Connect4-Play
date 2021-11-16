@@ -53,15 +53,17 @@ SOFTWARE.
   <br>
   <!-- Board -->
   <table>
-    <tr>
-      <th><a href="/0">0</a></th>
-      <th><a href="/1">1</a></th>
-      <th><a href="/2">2</a></th>
-      <th><a href="/3">3</a></th>
-      <th><a href="/4">4</a></th>
-      <th><a href="/5">5</a></th>
-      <th><a href="/6">6</a></th>
-    </tr>
+    <table id="buttonTable">
+      <!-- TODO: change onclick="..." with main.js method dropDisk(row) -> not visible -->
+      <!-- <th><button type="button" class="btn btn-secondary btn-sm" onclick="dropDisk(0)">0</button></th> -->
+      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/0'">0</button></th>
+      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/1'">1</button></th>
+      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/2'">2</button></th>
+      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/3'">3</button></th>
+      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/4'">4</button></th>
+      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/5'">5</button></th>
+      <th><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='/6'">6</button></th>
+
     @for(rowIndex <- 0 to controllerAdapter.tellNumberOfBoardRows() - 1) { <tr>
       @for(columnIndex <- 0 to controllerAdapter.tellNumberOfBoardColumns() - 1) { <td width="22">
         @if(controllerAdapter.isDiscSetAt(rowIndex, columnIndex)) {
@@ -130,7 +132,7 @@ SOFTWARE.
               <li>The game ends when there is a 4-in-a-row or a stalemate.</li>
               <li>The starter of the previous game goes second on the next game.</li>
             </ul>
-            <img src=@routes.Assets.versioned("images/wiki-gameplay.gif")>
+            <img src=@routes.Assets.versioned("images/wiki-gameplay.gif") class="center">
         </blockquote>
       </span>
     </details>
@@ -149,7 +151,7 @@ SOFTWARE.
               <br>
               <br>
               <h5><a href="https://github.com/JeSuisUneLicorne/Connect4-Play" target="_blank">WEB VERSION</a></h5>
-              <a href="https://github.com/dankoncs" target="_blank">Daniel Özyurt</a> & <a href="https://github.com/JeSuisUneLicorne/" target="_blank">Julian Zimmermann</a>
+              <a href="https://github.com/dan8510" target="_blank">Daniel Özyurt</a> & <a href="https://github.com/JeSuisUneLicorne/" target="_blank">Julian Zimmermann</a>
         </blockquote>
       </span>
     </details>

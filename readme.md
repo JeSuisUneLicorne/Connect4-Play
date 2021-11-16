@@ -2,9 +2,9 @@
 
 **About**
 
----
+This project by [Daniel Özyurt](https://github.com/dan8510) and [Julian Zimmermann](https://github.com/JeSuisUneLicorne) is the coursework for Web Applications class at [University of Applied Sciences Constance (HTWG Konstanz)](https://www.htwg-konstanz.de/) for fall 2021.
 
-Coursework for our Web Applications class of fall 2021.
+---
 
 **Screenshots**
 

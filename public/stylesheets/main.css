@@ -168,4 +168,14 @@ blockquote {
     background-color: #FFF5EE;
 }
 
+.btn-sm {
+    padding:.125rem .375rem;
+    font-size:.75rem;
+    border-radius:.3rem;
+}
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
