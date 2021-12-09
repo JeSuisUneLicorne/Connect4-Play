@@ -1,7 +1,8 @@
+
 /*
   MIT License
 
-  Copyright (c) 2021 Daniel Özyurt, Julian Zimmermann
+  Copyright (c) 2021 Daniel (he wants his privacy), Julian Zimmermann
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -15,7 +16,7 @@
 
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFINGEMENT. IN NO EVENT SHALL THE
   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
@@ -47,8 +48,7 @@ object GameBoardDiscCodes extends Enumeration {
   */
 class GameControllerAdapter {
   private val injector: Injector = Guice.createInjector(new ConnectFourModule)
-  private val controller: ControllerInterface =
-    injector.getInstance(classOf[ControllerInterface])
+  private val controller: ControllerInterface = injector.getInstance(classOf[ControllerInterface])
 
   /** Deletes all discs inside the board. */
   def emptyBoard(): Unit = controller.createEmptyGrid(
@@ -97,20 +97,17 @@ class GameControllerAdapter {
   }
 
   /** Drops a disc in the specified column. */
-  def dropDiscAt(columnIndex: Int): Unit =
-    controller.setValueToBottom(columnIndex)
+  def dropDiscAt(columnIndex: Int): Unit = controller.setValueToBottom(columnIndex)
 
   /** Returns a disc element as an integer value at the specified board position
     * (0 - empty, 1 - player 1 or 2 - player 2).
     */
-  def getDiscValueAt(rowIndex: Int, columnIndex: Int): Int =
-    controller.grid.cells.rows(rowIndex)(columnIndex).value
+  def getDiscValueAt(rowIndex: Int, columnIndex: Int): Int = controller.grid.cells.rows(rowIndex)(columnIndex).value
 
   /** Checks whether or not a disc element is present at the specified board
     * position.
     */
-  def isDiscSetAt(rowIndex: Int, columnIndex: Int): Boolean =
-    controller.grid.cells.rows(rowIndex)(columnIndex).isSet
+  def isDiscSetAt(rowIndex: Int, columnIndex: Int): Boolean = controller.grid.cells.rows(rowIndex)(columnIndex).isSet
 
   /** Checks whether or not a win case is present. */
   def tellBoardStatus(): Enumeration#Value = controller.getGameStatus()
@@ -119,8 +116,7 @@ class GameControllerAdapter {
   def tellCurrentTurn(): Int = controller.currentPlayer()
 
   /** Checks whether the specified player is in turn or not. */
-  def checkCurrentTurnOf(playerIndex: Int): Boolean =
-    controller.getTurn(playerIndex)
+  def checkCurrentTurnOf(playerIndex: Int): Boolean = controller.getTurn(playerIndex)
 
   /** Returns the number of rows of the game board. */
   def tellNumberOfBoardRows(): Int = controller.grid.cells.row

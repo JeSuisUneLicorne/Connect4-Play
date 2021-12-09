@@ -2,7 +2,7 @@
 
 **About**
 
-This project by [Daniel Özyurt](https://github.com/dan8510) and [Julian Zimmermann](https://github.com/JeSuisUneLicorne) is the coursework for Web Applications class at [University of Applied Sciences Constance (HTWG Konstanz)](https://www.htwg-konstanz.de/) for fall 2021.
+This project by Daniel (he wants his privacy - ask Julian, if you need contact) and [Julian Zimmermann](https://github.com/JeSuisUneLicorne) is the coursework for Web Applications class at [University of Applied Sciences Constance (HTWG Konstanz)](https://www.htwg-konstanz.de/) for fall 2021.
 
 ---
 
@@ -16,7 +16,7 @@ This project by [Daniel Özyurt](https://github.com/dan8510) and [Julian Zimmerm
 <details>
   <summary> <b>Guidelines</b> </summary>
     <ul>
-        <li><a href="http://www.plainenglish.co.uk/how-to-write-in-plain-english.html" target="_blank">How to write in plain English</a>  
+        <li><a href="https://www.plainenglish.co.uk/how-to-write-in-plain-english.html" target="_blank">How to write in plain English</a>  
         <li><a href="https://github.com/RomuloOliveira/commit-messages-guide" target="_blank">Commit messages guide</a>  
         <li><a href="https://github.com/databricks/scala-style-guide" target="_blank">Databricks Scala Guide</a>  
         <li><a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">Google's HTML/CSS Style Guide</a>  
